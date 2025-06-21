@@ -85,7 +85,7 @@
           contents
           "</div>\n</main>\n"
           "<footer>\n<div class=\"footer-bar\">\n"
-          "<p>&copy; 2025 Zhixiao Zhang · Powered by Emacs</p>"
+          "<p>&copy; 2025 Zhixiao Zhang · Powered by <a href=\"https://www.gnu.org/software/emacs/\" target=\"_blank\">Emacs</a> and <a href=\"https://github.com/zhixiao-zhang/emacs-based-site\" target=\"_blank\">emacs-based-site</a></p>"
           "</div>\n</footer>\n"
           "<script src=\"" my-site-root "js/script.js\" defer></script>\n"
           "</body>\n</html>")))
