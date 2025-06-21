@@ -22,7 +22,7 @@
 
 * Welcome to my homepage
 
-I'm a PhD student at [[https://jiezhoucs.github.io/][Prof. Jie Zhou]]'s group at GWU CS. Before join GWU, I received my Bachelor's degree from the College of Software Engineering at [[https://en.wikipedia.org/wiki/Sichuan_University][Sichuan University]].
+I'm a PhD student at [[https://jiezhoucs.github.io/][Prof. Jie Zhou]]'s group at GWU CS. Before GWU, I received my Bachelor's degree from the College of Software Engineering at [[https://en.wikipedia.org/wiki/Sichuan_University][Sichuan University]].
 
 #+BEGIN_EXPORT html
 <p>My Chinese name is <ruby>张<rt>&nbsp;zhāng</rt>志<rt>&nbsp;zhì</rt>孝<rt>&nbsp;xiào</rt></ruby>.</p>
