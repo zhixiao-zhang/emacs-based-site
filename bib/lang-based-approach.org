@@ -1,0 +1,68 @@
+#+TITLE: A Language-Based Approach to Security
+
+**** Authors: Fred B. Schneider, Greg Morrisett, Robert Harper
+
+*** 1. Why do we need language-based security?
+
+#+BEGIN_QUOTE
+Two classic computer security principles:
+- Principle of Least Privilege: Throughout execution, each principal should be accorded the minimum access necessary to accomplish its task.
+- Minimal Trusted Computing Base: Assurance that an enforcement mechanism behaves as intended is greatest when the mechanism is small and simple.
+#+END_QUOTE
+
+Previously, the scale of systems was small. Hence, we can integrate the trusted computing base into the operating system and follow the principles. 
+
+However, as systems grow, these policies become coarse-grained. Many resources are not even included in the operating system, making them more vulnerable.
+
+Therefore, we should employ some new approaches to handle them, such as **language-based security**.
+
+#+BEGIN_QUOTE
+Normally, reference monitors are the tool to secure target systems by halting them whenever the security policies are violated. The prerequisite of this method is that reference monitors are secure. We can apply some mechanisms, such as memory protection hardware, to protect them, which has a performance cost and restricts the range of policies.
+#+END_QUOTE
+
+*** 2. What are the advantages of language-based security?
+
+Language-based security, based on program analysis and program rewriting, employs **flexible** and **fine-grained** methods to instantiate the two principles.
+
+Moreover, many technologies, such as just-in-time compilers, run-time code generation, and other programming language methods, can incorporate the language-based approach to **reduce the overhead**.
+
+#+BEGIN_QUOTE
+Much work is directed at enforcing policies on the intermediate representation, even object code.
+#+END_QUOTE
+
+*** 3. How does language-based security solve the problems?
+
+Theoretically, there are two types of the language-based approach—**program rewriting** and **program analysis**. Today's research efforts can be categorized into two groups: one is **in-lined reference monitors**, and the other one is **type-safe programming languages**. They employ program rewriting and program analysis methods, respectively.
+
+**** 3.1 In-lined Reference Monitors
+
+#+BEGIN_QUOTE
+Reference monitors: Software that halts the system when specific security policies are **violated**.
+#+END_QUOTE
+
+*Key idea*: Inline the reference monitor into the target system code rather than separating them into different address spaces.
+
+**** 3.2 Type-safe Programming Languages
+
+#+BEGIN_QUOTE
+Type systems: A rule set that determines which operations can be applied to which values through type abstraction.
+#+END_QUOTE
+
+*Key idea*: Shift the burden of proving that a program complies with a policy from the code recipient to the code producer.
+Type-based methods impose on the programmer the burden of demonstrating compliance with a given security policy.
+
+**** 3.3 Certifying Compilers
+
+*Motivation*: type-based approaches rely on the high-level language assumption.
+
+*Key idea*: Replace a trusted compiler (used in the type-based approach) with an **untrusted certifying compiler** plus a **trusted certificate checker**, which is much smaller and simpler than the former.
+
+**** 3.4 Mix them!
+
+- Integrated IRM enforcement with Type Systems.
+	- Sometimes, security policies require dynamic information, which can't be retrieved at compile-time.
+	- Sometimes, inserting a dynamic check is simpler than creating a complex and error-prone proof.
+- Extending IRM enforcement with Certifying Compilers.
+	- add checking code and security updates to do analysis and optimization to remove unnecessary checking code, provided the IRM rewriter produces a certificate along with the modified object code.
+- Extending Certifying Compilers with IRM enforcement.
+	- Combine the static analysis and dynamic analysis. For instance, the compiler emits a run-time check; then, static analysis can guarantee the array access is safe.

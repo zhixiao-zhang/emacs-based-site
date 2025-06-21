@@ -1,0 +1,73 @@
+Authors: Santosh Nagarakatte, Milo M. K. Martin, and Steve Zdancewic
+
+Keywords: Memory safety, Buﬀer overflows, Dangling pointers, Pointer-based check-
+ing, SoftBoundCETS
+
+[SNAPL'15]
+
+** What problem does this paper try to solve?
+
+Provide full memory safety for C.
+
+** Why is the problem important?
+
+Refer to Google's article: [[https://research.google/pubs/secure-by-design-googles-perspective-on-memory-safety/][Secure by Design: Google's Perspective on Memory Safety]]
+
+** What is this paper's solution to the problem?
+
+Employ a pointer-based approach which injecting code to maintain per-pointer metadata and checking the metadata before dereferencing a pointer. The metadata is stored in a disjoint space. 
+
+*** How to maintain the metadata?
+
+metadata layout: [ base | bound ]|{ key | lock }
+
+#+BEGIN_QUOTE
+Fields in [] are for spatial memory safety, fields in {} are for temporal memory safety.
+#+END_QUOTE
+
+- base (64-bit value): the base address of the value pointed by a pointer.
+- bound (64-bit value): the end address of the value pointed by a pointer.
+- key: an allocation identifier.
+- lock: a pointer points to a location in memory. The key and the value pointed by lock should match.
+
+*** How they handle function calls?
+
+*Problem: variable arguments, function pointers (indirect calls).*
+
+1. adding metadata as extra arguments
+2. using a shadow stack
+
+*** How to provide backward compatibility?
+
+1. provide wrappers for commonly used libraries
+2. write glue code for pointer modified by the external libray
+
+** What are the strengths of this paper?
+
+1. Backward Compatibility. (disjoint metadata)
+2. trie data structure
+3. comprehensive safety
+4. metadata can't be overwrited
+5. less invasiveness
+
+** What are the limitations of this paper?
+
+1. bad performance (70%-80%)
+
+#+BEGIN_QUOTE
+They assume that these overheads are within the reach of the acceptable threshold for a large class of applications.
+But they don't provide any evidence.
+#+END_QUOTE
+
+** What are other solutions and what are the most relevant works?
+
+AddressSanitizer (tripwire approach)
+
+SAFECode, BaggyBound (Object-based approach)
+
+SafeC, CCured, Cyclone, MSCC (Pointer-based approach)
+
+** What's your favourite part of this work?
+
+Numerous design for their approach, from hardware to software.
+

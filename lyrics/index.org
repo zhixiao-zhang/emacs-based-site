@@ -1,0 +1,14 @@
+#+TITLE: Lyrics
+
+- [[file:szsx.html][狮子山下]]
+- [[file:zfn.html][祝福你]]
+- [[file:xyzth.html][下一站天后]]
+- [[file:xsfyz.html][相思风雨中]]
+- [[file:xlfd.html][小李飞刀]]
+- [[file:wsqszsq.html][万水千山总是情]]
+- [[file:sjdyd.html][世界第一等]]
+- [[file:px.html][飘雪]]
+- [[file:lg.html][骊歌]]
+- [[file:jxfy.html][几许风雨]]
+- [[file:hxfs.html][好心分手]]
+- [[file:dyfg.html][黛玉焚稿]]

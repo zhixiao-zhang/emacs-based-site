@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       823C108C-C6E4-4C26-A676-63250F6DE92C
+:END:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="{{site-root}}css/homepage.css">
+#+HTML_HEAD: <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+#+BEGIN_EXPORT html
+<div class="intro-section">
+  <div class="intro-left">
+    <img src="{{site-root}}images/avatar.jpg" alt="Avatar">
+  </div>
+  <div class="intro-right">
+    <h2>Zhixiao Zhang</h2>
+    <p>PhD Student</p>
+    <p><i class="fa-solid fa-map"></i> I St NW, Washington, DC</p>
+    <p><i class="fa-solid fa-building" style="color: black"></i> The George Washington University</p>
+    <p><a href="mailto:zhixiao.zhang@gwu.edu"><i class="fa-solid fa-envelope" style="color: black;"></i> Email</a></p>
+    <p><a href="https://github.com/zhixiao-zhang/"><i class="fa-brands fa-github" style="color: black;"></i> Github</a></p>
+  </div>
+</div>
+#+END_EXPORT
+
+* Welcome to my homepage
+
+I'm a PhD student at [[https://jiezhoucs.github.io/][Prof. Jie Zhou]]'s group at GWU CS. Before join GWU, I received my Bachelor's degree from the College of Software Engineering at [[https://en.wikipedia.org/wiki/Sichuan_University][Sichuan University]].
+
+#+BEGIN_EXPORT html
+<p>My Chinese name is <ruby>张<rt>&nbsp;zhāng</rt>志<rt>&nbsp;zhì</rt>孝<rt>&nbsp;xiào</rt></ruby>.</p>
+#+END_EXPORT
+
+* Research Interests
+
+I am interested in system security, programming languages, program analysis, and computer systems. Broadly, I aim to leverage theoretical techniques–such as type theory–to enhance the performance, robustness, and reliability of software systems. Currently, I am working on a memory safety project. My ultimate goal is to build fault-free softwares.
+
+* Philosophy
+
+I believe that to resist this ramshackle world, we must build our inner world from scratch–intentionally and independently–rather than trying to subtract chaos from a flawed system, just as Thoreau did in /Walden/.
+
+Instead of passively following every evolution this boundless world undergoes, we should deliberately choose a few domains and pursue depth and growth within them.

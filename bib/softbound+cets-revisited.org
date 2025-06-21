@@ -1,0 +1,66 @@
+#+TITLE: SoftBound+CETS Revisited: More Than a Decade Later
+Authors: Benjamin Orthen, Oliver Braunsdorf, Philipp Zieris, Julian Horsch
+
+Category: Security
+
+Keywords: memory safety, sanitization, buffer overflows, sub-object overflows, use-after-free, C
+
+*** What problem does this paper try to solve?
+
+Memory safety issues.
+
+*** Why is the problem important?
+
+According to the Chromium project, approximately 70% of all severe security bugs are still caused by memory errors.
+
+*** What is this paper's solution to the problem?
+
+Improve Softbound+CETS.
+
+*** What are the strengths of this paper?
+
+Enhance the capability in detecting memory errors and usability of the orginal softbound+cets.
+
+For example, the original softbound doesn't handle sub-object out-of-bounds errors.
+
+**** How they detect sub-object overflows?
+
+They instrument the GEP to determine the address of a subelement within an aggregate.
+
+*** What are the limitations and weaknesses of this paper?
+
+Performance, which is 1.68x in geometric mean and 2x in average on SPEC CPU 2017.
+
+It only support fixed-sized vectors. (The original one only handles vectors with up to two pointer elements.)
+
+*** What makes this paper publishable?
+
+The improvement of softbound+cets, and no new approach after softbound+cets.
+
+*** What are the key techniques on which this work depends?
+
+LTO, LLVM
+
+*** What are other solutions and what are the most relevant works?
+
+CCured
+
+*** Related links
+
+https://github.com/Fraunhofer-AISEC/softboundcets
+
+*** Thing(s) that I like particularly about this paper.
+
+Simplism.
+
+*** What is the take-away message from this paper?
+
+Softbound+cets is slow, it's time to evolve.
+
+*** Other comments
+
+LLVM 12, move aggressive inlining of runtime functions, runtime library
+
+The orginal one misses proper metadata propagation and lacks support for nested aggregates that contain pointer arrays.
+
+They disable the constant offset consolidation within LLVM's "Instruction Combining" optimization.

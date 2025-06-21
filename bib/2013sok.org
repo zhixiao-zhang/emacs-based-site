@@ -1,0 +1,138 @@
+Authors: László Szekeres, Mathias Payer, Tao Wei, Dawn Song
+
+Category: SoK
+
+Keywords: security, memory safety
+
+*** What problem does this paper survey?
+
+Why do exploits still exist?
+
+How they defeat currently deployed protections?
+
+How to defeat them?
+
+*** Questions asked by this paper
+
+1. How do exploits work?
+
+[[https://cdn.jsdelivr.net/gh/zzxdyf1314/mycloudimg@master/attack-model.png]]
+
+#+BEGIN_QUOTE
+Q: Why is reading from a pointer **under the attacker's control** vulnerable?
+
+A: Because the attacker can control the value being read, for example, an ROP gadget.
+#+END_QUOTE
+
+2. How to protect against exploits?
+
+The most widely deployed protection mechanisms are stack smashing protection, DEP/W⊕X and ASLR.
+
+3. Why or why not is a policy being deployed?
+
+- Protection
+  - Enforced policy.
+  - False negatives.
+  - False positives.
+- Cost
+  - Performance overhead
+  - Memory overhead
+- Compatibility
+  - Source Compatibility
+  - Binary Compatibility
+  - Modularity Support
+  
+4. What's the popular work in different perspective of memory war?
+  - Memory Safety (focus on transformming exist unsafe code to enforce similar policies)
+
+    #+BEGIN_QUOTE
+    The only way to enforce complete spatial safety is to keep track of pointer bounds.
+    #+END_QUOTE
+    
+    - Spatial safety with
+      - pointer bounds (*overhead*, *compatibility*)
+      
+        CCurd ("fat pointers")
+        
+        Cyclone ("fat pointers")
+        
+        SoftBound (67%)
+      - object bounds (*overhead*, *no complete safety*)
+      
+        J&K (11-12x)
+        
+        CRED (2x)
+        
+        J&K with a automatic allocation pool (1.2x)
+        
+        BBC (60%)
+        
+        PAriCheck (60%)
+    - Temporal safety
+      - Special allocators (*no complete safety*): Cling
+      
+      - Object based approaches (*no complete safety*, *overhead*):
+      
+        Valgrind's Memcheck (10x)
+        
+        AddressSanitizer (73% at compile-time)
+      
+      - Pointer based approaches (*overhead*, *compatibility*)
+      
+        CETS (116%)
+  
+  - Data Integrity
+    - Integrity of safe objects:
+    
+      Yong's system (50%-100%, compatibility)
+      
+    - Integrity of points-to sets:
+
+      WIT (5-25%, compatibility)
+      
+      BinArmor (180%)
+
+  - Data-flow Integrity
+  
+    Castro's approach (50%-100%, compatibility)
+
+  - Code Pointer Integrity
+  
+    infeasible
+
+  - Control-flow Integrity
+  
+    - Dynamic return integrity
+
+      stack cookies (canaries, less than 1%, partial safety), shadow stacks (5%, compatibility)
+    
+    - Static control-flow graph integrity
+    
+      Abadi's approach (15% on average, 45% max, 10% due to implementation, compatibility)
+
+*** What are the strengths of this paper?
+
+A systematic and graphic model of all layers of memory corruption mechanism and defenses
+
+*** What are the limitations and weaknesses of this paper?
+
+Without a same metric for shown approaches. Only use the data derived from the original paper.
+
+*** What makes this paper publishable?
+
+The systematic classification and illustration.
+
+*** What are other solutions and what are the most relevant works?
+
+[[https://oaklandsok.github.io/papers/song2019.pdf][SoK: Sanitizing for Security]]
+
+*** Thing(s) that I like particularly about this paper.
+
+the clear graph
+
+*** What is the take-away message from this paper?
+
+#+BEGIN_QUOTE
+Researchers have to step back, and instead of focusing on specific attacks, we need to look at the big picture.
+#+END_QUOTE
+

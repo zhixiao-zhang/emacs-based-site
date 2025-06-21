@@ -1,0 +1,11 @@
+#+TITLE: Blog
+
+** 2025
+- 2025-05-31 [[file:2025/self-compassion.html][Self Compassion Is All You Need]]
+- 2025-05-26 [[file:2025/deepwork.html][Deep Work Is All You Need]]
+- 2025-04-23 [[file:2025/huiyouguangma.html][会有光吗？]]
+- 2025-02-24 [[file:2025/education.html][教育的代价]]
+- 2025-01-20 [[file:2025/wenqing.html][文青之死]]
+** 2024
+- 2024-12-30 [[file:2024/happy2025.html][迎着命运的岔路口奔跑]]
+- 2024-05-12 [[file:2024/beijing.html][北京游记]]
