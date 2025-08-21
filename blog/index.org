@@ -1,6 +1,8 @@
 #+TITLE: Blog
 
 ** 2025
+- 2025-08-07 [[file:2025/qumei.html][谈词语——祛魅“祛魅”]]
+- 2025-07-31 [[file:2025/newlife.html][推动生活的石头]]
 - 2025-05-31 [[file:2025/self-compassion.html][Self Compassion Is All You Need]]
 - 2025-05-26 [[file:2025/deepwork.html][Deep Work Is All You Need]]
 - 2025-04-23 [[file:2025/huiyouguangma.html][会有光吗？]]
